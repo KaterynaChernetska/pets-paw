@@ -25,7 +25,7 @@ export const ItemsList = () => {
           <li
             style={{
               borderLeft:
-                item.id === selectedNote.id ? "4px solid deeppink" : "",
+                item.id === selectedNote?.id ? "4px solid deeppink" : "",
             }}
             className="listItem"
             key={item.id}

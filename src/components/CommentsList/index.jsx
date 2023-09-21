@@ -7,7 +7,7 @@ export const CommentsList = ({ id }) => {
   const selectedItem = list.find((item) => item.id === id);
   if (!selectedItem) return;
   const { comments } = selectedItem;
-  
+  console.log(comments)
   return (
     <ul className="commentsList">
       {comments?.map((comment) => (

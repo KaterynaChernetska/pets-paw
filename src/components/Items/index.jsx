@@ -12,7 +12,6 @@ export const Items = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     dispatch(addNote(note, Math.round(Date.now() + Math.random())));
-    console.log(note)
     setNote("");
   };
 
