@@ -1,4 +1,4 @@
-.mainPage{
+.pageContainer{
   display: flex;
 }
 .asideBar{
@@ -16,4 +16,9 @@
 .slogan{
   color: #5B5D63;
   font-size: 20px;
+}
+.mainPage{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
 }
