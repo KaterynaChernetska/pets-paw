@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./input.css";
 
 export const Input = ({
   placeholder,
@@ -7,8 +8,9 @@ export const Input = ({
   onChange = () => {},
 }) => {
   return (
-    <label className="input">
+    <label>
       <input
+        className="input"
         placeholder={placeholder}
         required={required}
         value={value}

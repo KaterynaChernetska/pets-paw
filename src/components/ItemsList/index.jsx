@@ -22,16 +22,18 @@ export const ItemsList = () => {
     <ul>
       {list.length > 0 ? (
         list.map((item) => (
-          <li key={item.id} onClick={() => handleNoteClick(item)}>
-            <p
-              className="isActive"
-              style={{
-                backgroundColor: item.id === selectedNote.id ? "red" : "",
-              }}
-            ></p>
+          <li
+            style={{
+              borderLeft:
+                item.id === selectedNote.id ? "4px solid deeppink" : "",
+            }}
+            className="listItem"
+            key={item.id}
+            onClick={() => handleNoteClick(item)}
+          >
             {item.name}
-            <span>{item.comments.length}</span>
-            <button onClick={() => handleDeleteNoteBtn(item.id)}>Delete</button>
+            <span className="itemsComments">{item.comments.length}</span>
+            <button className="deleteBtn" onClick={() => handleDeleteNoteBtn(item.id)}>Delete</button>
           </li>
         ))
       ) : (

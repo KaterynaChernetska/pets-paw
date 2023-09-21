@@ -3,6 +3,7 @@ import { ItemsList } from "../ItemsList";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { addNote } from "../../redux/actions";
+import "./items.css";
 
 export const Items = () => {
   const dispatch = useDispatch();
@@ -16,16 +17,16 @@ export const Items = () => {
   };
 
   return (
-    <div>
-      <h2>Items</h2>
-      <form onSubmit={handleFormSubmit}>
+    <div className="itemsContainer">
+      <h2 className="itemsHeader">Items</h2>
+      <form className="itemsForm" onSubmit={handleFormSubmit}>
         <Input
           placeholder={"Type name here..."}
           required={true}
           value={note}
           onChange={(e) => setNote(e.target.value)}
         />
-        <button type="submit">Add new</button>
+        <button className="addBtn" type="submit">Add new</button>
       </form>
       <ItemsList />
     </div>

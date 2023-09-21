@@ -1,4 +1,33 @@
-.isActive {
-    width: 20px;
-   height: 20px;
+.listItem {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+}
+.itemsComments {
+  width: 25px;
+  height: 20px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #17a2b8;
+  position: absolute;
+  right: 110px;
+}
+.deleteBtn {
+  color: #dc3545;
+  background-color: transparent;
+  background-image: none;
+  border-color: #dc3545;
+  padding: 6px 12px;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.deleteBtn:hover {
+  color: #fff;
+  background-color: #dc3545;
 }

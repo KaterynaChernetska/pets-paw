@@ -4,6 +4,7 @@ import useSelectedNote from "../hooks/selectedNoteHook";
 import { useDispatch, useSelector } from "react-redux";
 import { addComment } from "../../redux/actions";
 import { CommentsList } from "../CommentsList";
+import "./Comments.css";
 
 export const Comments = () => {
   const [comment, setComment] = useState("");
@@ -22,11 +23,12 @@ export const Comments = () => {
     setComment("");
   };
   return (
-    <div>
-      <h2>Comments #{notes.length > 0 ? selectedNote.id : ""}</h2>
+    <div className="commentsContainer">
+      <h2 className="itemsHeader">Comments #{notes.length > 0 ? selectedNote.id : ""}</h2>
       {notes.length > 0 && <CommentsList id={selectedNote.id} />}
-      <form onSubmit={handleFormSubmit}>
-        <input
+      <form className="itemsForm" onSubmit={handleFormSubmit}>
+        <input 
+        className="colorInput"
           type="color"
           value={selectedColor}
           onChange={handleColorChange}
@@ -37,7 +39,7 @@ export const Comments = () => {
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         />
-        <button type="submit">Add new</button>
+        <button className="addBtn" type="submit">Add new</button>
       </form>
     </div>
   );

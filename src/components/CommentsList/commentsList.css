@@ -1,4 +1,14 @@
-.color{
-    width:30px;
-    height: 30px;
+.color {
+  width: 60px;
+  height: 60px;
+}
+.commentsList {
+  margin-bottom: 20px;
+}
+.commentsListItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #ffff;
+  margin-bottom: 10px;
 }

@@ -1,23 +1,25 @@
-.pageContainer{
+.pageContainer {
   display: flex;
 }
-.asideBar{
-  background-color: #2B2F3E;
-  width: 200px;
+.asideBar {
+  background-color: #2b2f3e;
   height: 100vb;
- text-align: center;
- padding: 20px;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  height: 100%;
+  max-width: 600px;
 }
-.logo{
+.logo {
   color: #ffff;
   font-size: 30px;
   padding-bottom: 10px;
 }
-.slogan{
-  color: #5B5D63;
+.slogan {
+  color: #5b5d63;
   font-size: 20px;
 }
-.mainPage{
+.mainPage {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
