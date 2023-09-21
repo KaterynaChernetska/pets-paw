@@ -6,11 +6,11 @@ import useSelectedNote from "../hooks/selectedNoteHook";
 export const ItemsList = () => {
   const dispatch = useDispatch();
   const list = useSelector((state) => state.notes);
-
   const selectedNote = useSelectedNote();
 
   const handleDeleteNoteBtn = (id) => {
     dispatch(deleteNote(id));
+    localStorage.removeItem("activeNote");
   };
 
   const handleNoteClick = (item) => {
@@ -31,13 +31,12 @@ export const ItemsList = () => {
             ></p>
             {item.name}
             <span>{item.comments.length}</span>
-            <button onClick={() => handleDeleteNoteBtn(item.id)}>delete</button>
+            <button onClick={() => handleDeleteNoteBtn(item.id)}>Delete</button>
           </li>
         ))
       ) : (
         <p>Please add some notes first</p>
       )}
     </ul>
-    
   );
 };

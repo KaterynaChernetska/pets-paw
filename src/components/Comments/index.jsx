@@ -1,29 +1,44 @@
-import { useSelector } from "react-redux";
 import { Input } from "../Input";
 import { useState } from "react";
 import useSelectedNote from "../hooks/selectedNoteHook";
+import { useDispatch, useSelector } from "react-redux";
+import { addComment } from "../../redux/actions";
+import { CommentsList } from "../CommentsList";
 
 export const Comments = () => {
-    const [comment, setComment] = useState('');
-//   const storedSelectedNote = JSON.parse(localStorage.getItem("activeNote"));
-
-//   const selectedNoteRedux = useSelector((state) => state.selectedNote);
-
+  const [comment, setComment] = useState("");
+  const [selectedColor, setSelectedColor] = useState("#000000");
+  const dispatch = useDispatch();
   const selectedNote = useSelectedNote();
+  const notes = useSelector((state) => state.notes);
 
-  console.log(selectedNote);
+  const handleColorChange = (event) => {
+    setSelectedColor(event.target.value);
+  };
+
+  const handleFormSubmit = () => {
+    dispatch(addComment(selectedNote.id, comment, selectedColor));
+    setSelectedColor("#000000");
+    setComment("");
+  };
   return (
     <div>
-      <h2>{selectedNote?.id}</h2>
-    <form>
-    <Input
+      <h2>Comments #{notes.length > 0 ? selectedNote.id : ""}</h2>
+      {notes.length > 0 && <CommentsList id={selectedNote.id} />}
+      <form onSubmit={handleFormSubmit}>
+        <input
+          type="color"
+          value={selectedColor}
+          onChange={handleColorChange}
+        />
+        <Input
           placeholder={"Type comment here..."}
           required={true}
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         />
-    <button type="submit"></button>
-    </form>
+        <button type="submit">Add new</button>
+      </form>
     </div>
   );
 };

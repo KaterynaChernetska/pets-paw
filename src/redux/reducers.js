@@ -40,8 +40,8 @@ const rootReducer = (state = initialState, action) => {
                 ...note.comments,
                 {
                   id: nanoid(),
-                  ...action.payload.comment,
-                  ...action.payload.color,
+                 body: action.payload.comment,
+                  color: action.payload.color,
                 },
               ],
             };

@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
 const useSelectedNote = () => {
   const storedSelectedNote = JSON.parse(localStorage.getItem("activeNote"));

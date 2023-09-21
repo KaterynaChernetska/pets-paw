@@ -1,4 +1,4 @@
-import "./App.scss";
+import "./App.css";
 import { Comments } from "./Comments";
 import { Items } from "./Items";
 
