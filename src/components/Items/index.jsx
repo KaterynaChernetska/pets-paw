@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { addNote } from "../../redux/actions";
 import "./items.css";
-import { nanoid } from "nanoid";
 
 export const Items = () => {
   const dispatch = useDispatch();
@@ -12,7 +11,7 @@ export const Items = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    dispatch(addNote(note, nanoid()));
+    dispatch(addNote(note, Math.round(Date.now() + Math.random())));
     setNote("");
   };
 
